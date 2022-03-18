@@ -6,13 +6,13 @@ import webbrowser
 url = requests.get('https://www.mercadolibre.com.ar/smart-tv-samsung-series-5-un43t5300agczb-led-full-hd-43-220v-240v/p/MLA17291290?pdp_filters=category:MLA1002#searchVariation=MLA17291290&position=6&search_layout=stack&type=product&tracking_id=629e21d7-5fd5-46e2-8505-ba979a0869a8')
 
 soup = BeautifulSoup(url.content, "html.parser")
-resultado = soup.find("span", {"class":"andes-money-amount__fraction"})
-precioInicio_text = resultado.text
-precioInicial = float(precioInicio_text)
+result = soup.find("span", {"class":"andes-money-amount__fraction"})
+inicialPrice_text = result.text
+inicialPrice = float(inicialPrice_text)
 
-precioDeseado = 60.000
+idealPrice = 60.000
 
-if precioInicial < precioDeseado:
+if inicialPrice < idealPrice:
     print("Hay oferta")
 else: 
     print("No hay oferta")
@@ -30,7 +30,7 @@ def telegram_bot_sendtext(bot_message):
     return response.json()
     
 
-if precioInicial < precioDeseado
-    test = telegram_bot_sendtext(f"Oferta! {'$'(precioInicial")}\nEnlance: https://www.mercadolibre.com.ar/smart-tv-samsung-series-5-un43t5300agczb-led-full-hd-43-220v-240v/p/MLA17291290?pdp_filters=category:MLA1002#searchVariation=MLA17291290&position=6&search_layout=stack&type=product&tracking_id=629e21d7-5fd5-46e2-8505-ba979a0869a8") 
+if inicialPrice < idealPrice:
+    test = telegram_bot_sendtext(f"Oferta! {'$'(inicialPrice")}\nEnlance: https://www.mercadolibre.com.ar/smart-tv-samsung-series-5-un43t5300agczb-led-full-hd-43-220v-240v/p/MLA17291290?pdp_filters=category:MLA1002#searchVariation=MLA17291290&position=6&search_layout=stack&type=product&tracking_id=629e21d7-5fd5-46e2-8505-ba979a0869a8") 
 else:
     test = telegram_bot_sendtext("No hay oferta")
